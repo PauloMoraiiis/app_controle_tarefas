@@ -16,7 +16,7 @@
                             <a href="{{ route('tarefa.exportacao', ['extensao' => 'xlsx'])}}" class="mr-3">XLSX</a>
                             <a href="{{ route('tarefa.exportacao', ['extensao' => 'csv'])}}" class="mr-3">CSV</a>
                             <a href="{{ route('tarefa.exportacao', ['extensao' => 'pdf'])}}" class="mr-3">PDF</a>
-                            <a href="{{ route('tarefa.exportar', ['extensao' => 'DOM/PDF'])}}">PDF V2</a>
+                            <a href="{{ route('tarefa.exportar', ['extensao' => 'DOM/PDF'])}}" target="_blank">PDF V2</a>
                           </div>
                       </div>
                   </div>
@@ -53,15 +53,15 @@
 
                         <nav>
                             <ul class="pagination">
-                            <li class="page-item"><a class="page-link" href="{{ $tarefas->previousPageUrl() }}">Voltar</a></li>
+                              <li class="page-item"><a class="page-link" href="{{ $tarefas->previousPageUrl() }}">Voltar</a></li>
 
-                            @for($i = 1; $i <= $tarefas->lastPage(); $i++)
-                                <li class="page-item {{ $tarefas->currentPage() == $i ? 'active' : ''}}">
-                                    <a class="page-link" href="{{ $tarefas->url($i)}}">{{ $i }}</a>
-                                </li>
-                            @endfor
+                                @for($i = 1; $i <= $tarefas->lastPage(); $i++)
+                                    <li class="page-item {{ $tarefas->currentPage() == $i ? 'active' : ''}}">
+                                        <a class="page-link" href="{{ $tarefas->url($i)}}">{{ $i }}</a>
+                                    </li>
+                                @endfor
 
-                            <li class="page-item"><a class="page-link" href="{{ $tarefas->nextPageUrl() }}">Avançar</a></li>
+                              <li class="page-item"><a class="page-link" href="{{ $tarefas->nextPageUrl() }}">Avançar</a></li>
                             </ul>
                         </nav>
                 </div>
